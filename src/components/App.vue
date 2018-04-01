@@ -17,7 +17,9 @@
             <v-icon dark>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title class='body-1'>{{ item.title }}</v-list-tile-title>
+            <v-list-tile-title class='body-1'>
+               {{ item.title }}
+            </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -44,13 +46,15 @@
 </template>
 
 <script>
+import routes from '../router'
+
 export default {
   data () {
     return {
       drawer: false,
       menuItems: [
-          { title: 'e-Detailers', icon: 'photo_library' },
-          { title: 'Email Templates', icon: 'email' },
+          { title: 'e-Detailers', icon: 'photo_library', href:'/' },
+          { title: 'Email Templates', icon: 'email', href:'/emails' },
           { title: 'Call Flows', icon: 'image' },
           { title: 'Surveys', icon: 'help_outline' },
           { title: 'Microsites', icon: 'view_compact' }
@@ -60,6 +64,17 @@ export default {
           { icon: 'help' },
           { icon: 'notifications' },
       ]
+    }
+  },
+  methods: {
+    go (menuItem) {
+      console.log(menuItem.href)
+      this.$root.currentRoute = menuItem.href;
+      window.history.pushState(
+          null,
+          routes[menuItem.href],
+          menuItem.href
+        )
     }
   },
   name: 'App'

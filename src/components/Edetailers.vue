@@ -26,17 +26,14 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-  data () {
-    return {
-      items: [
-        { title: 'Default', image: 'card.jpeg' },
-        { 'title': 'Default1' },
-        { 'title': 'Default2' },
-        { 'title': 'Default3' },
-        { 'title': 'Default4' }
-      ]
-    }
+  computed: mapGetters('presentations', {
+    items: 'getList'
+  }),
+  created () {
+    this.$store.dispatch('presentations/getPresentations')
   },
   name: 'Edetailers'
 }
