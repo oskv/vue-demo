@@ -11,14 +11,14 @@
         </v-list>
       </v-toolbar>
       <v-divider></v-divider>
-      <v-list dense class="pt-0">
+      <v-list dense class="pt-0 menu-items">
         <v-list-tile v-for="item in menuItems" :key="item.title">
           <v-list-tile-action>
             <v-icon dark>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title class='body-1'>
-               {{ item.title }}
+              <router-link :to='item.href'>{{ item.title }}</router-link>
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -54,10 +54,10 @@ export default {
       drawer: false,
       menuItems: [
           { title: 'e-Detailers', icon: 'photo_library', href:'/' },
-          { title: 'Email Templates', icon: 'email', href:'/emails' },
-          { title: 'Call Flows', icon: 'image' },
-          { title: 'Surveys', icon: 'help_outline' },
-          { title: 'Microsites', icon: 'view_compact' }
+          { title: 'Email Templates', icon: 'email', href:'/emails'},
+          { title: 'Call Flows', icon: 'image', href:'/'},
+          { title: 'Surveys', icon: 'help_outline', href:'/'},
+          { title: 'Microsites', icon: 'view_compact', href:'/'}
         ],
       toolbarIcons: [
           { icon: 'build' },
@@ -84,5 +84,10 @@ export default {
 <style scoped>
 .list--dense {
   color: white;
+}
+.menu-items a{
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
 }
 </style>
