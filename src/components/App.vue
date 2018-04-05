@@ -27,7 +27,7 @@
 
     <v-toolbar class="primary theme--dark" app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>eWizard Online</v-toolbar-title>
+      <v-toolbar-title>{{ $t("common.menu.edetailers") }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn icon v-for="item in toolbarIcons" :key="item.icon">

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-md>
     <v-layout row wrap>
-      <v-card v-for="item in items" :key="item.title" width="200px" height="260px" class='mx-2'>
+      <v-card v-for="item in items" :key="item.title" width="200px" height="260px" class='mx-2 my-2'>
         <v-card-title primary-title>
           <div>
             <p class="mb-0">{{item.title}}</p>
