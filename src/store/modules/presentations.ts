@@ -23,7 +23,7 @@ const state = {
   
   // mutations
   const mutations = {
-    setList (state, list) {
+    setList (state:any, list:any) {
       state.list = list;
     },
   }
