@@ -6,6 +6,7 @@ import router from './router'
 import Vuetify from 'vuetify'
 import VueI18n from 'vue-i18n'
 import langEn from './i18n/en.json'
+import langRu from './i18n/ru.json'
 import 'vuetify/dist/vuetify.min.css'
 import store from './store'
 
@@ -18,7 +19,7 @@ const i18n = new VueI18n({
   locale: 'ru',
   messages: {
     en: langEn,
-    ru: langEn,
+    ru: langRu,
   }
 })
 
@@ -32,14 +33,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-/*setTimeout(function () {
-  console.log('change lang');
-  setI18nLanguage('en')
-}, 5000)
-
-function setI18nLanguage (lang) {
-  i18n.locale = lang
-  document.querySelector('html').setAttribute('lang', lang)
-  return lang
-}*/

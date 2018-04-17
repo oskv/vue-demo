@@ -30,6 +30,8 @@
       <v-toolbar-title>{{ $t("common.menu.edetailers") }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn icon @click='setLang("en")'>EN</v-btn>
+        <v-btn icon @click='setLang("ru")'>RU</v-btn>
         <v-btn icon v-for="item in toolbarIcons" :key="item.icon">
           <v-icon small >{{item.icon}}</v-icon>
         </v-btn>
@@ -68,15 +70,9 @@ export default Vue.extend({
     }
   },
   methods: {
-    /*go (menuItem) {
-      console.log(menuItem.href)
-      this.$root.currentRoute = menuItem.href;
-      window.history.pushState(
-          null,
-          routes[menuItem.href],
-          menuItem.href
-        )
-    }*/
+    setLang (lang: string) {
+      this.$i18n.locale = lang;
+    }
   },
   name: 'App'
 });
