@@ -45,10 +45,11 @@
   </v-app>
 </template>
 
-<script>
-import routes from '../router'
+<script lang='ts'>
+//import routes from '../router'
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
   data () {
     return {
       drawer: false,
@@ -67,7 +68,7 @@ export default {
     }
   },
   methods: {
-    go (menuItem) {
+    /*go (menuItem) {
       console.log(menuItem.href)
       this.$root.currentRoute = menuItem.href;
       window.history.pushState(
@@ -75,10 +76,10 @@ export default {
           routes[menuItem.href],
           menuItem.href
         )
-    }
+    }*/
   },
   name: 'App'
-}
+});
 </script>
 
 <style scoped>

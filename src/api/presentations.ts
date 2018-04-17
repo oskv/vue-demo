@@ -7,9 +7,9 @@ const _presentations = [
 ];
 
 export default {
-    getList (cb) {
-        return new Promise((resolve, reject) => {
+    getList () {
+        return new Promise((resolve, reject: any) => {
             setTimeout(() => resolve(_presentations), 500)
-        })
+        });
     },
   }
