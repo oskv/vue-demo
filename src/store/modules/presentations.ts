@@ -7,15 +7,17 @@ const state = {
   
   // getters
   const getters = {
-    getList: state => state.list
+    getList: function(state: any) {
+      return state.list
+    }
   }
   
   // actions
   const actions = {
-    getPresentations ({ commit }) {
+    getPresentations ({ commit }: { commit: any }) {
       presentationsApi
         .getList()
-        .then((presentations) => {
+        .then((presentations: any) => {
           commit('setList', presentations)
         });
     }
