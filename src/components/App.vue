@@ -48,7 +48,6 @@
 </template>
 
 <script lang='ts'>
-//import routes from '../router'
 import Vue from "vue";
 
 export default Vue.extend({
